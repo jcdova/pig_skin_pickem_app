@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pig Skin Pickem</title>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <!-- Added link to Firebase -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script> -->
+    <!-- Added link to moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <!-- Jumbotron-->
+    <div class="jumbotron" style="background-color: light-blue; color: black;">
+        <h1 class="text-center"><strong>Pig Skin Pickem</strong></h1>
+        <h3 class="text-center"><strong>Weekly Scheduled Matchups</strong></h3><br>
+        <h3 class="text-center"><strong>Enter an NFL Week Number</strong></h3>
+        <!-- <h3 class="text-center">Enter Week #</h3><br> -->
+        <!-- <div class="col-sm-6 container"> -->
+        <div style="display: flex; justify-content: center; color: black">
+            <label><h4>Week Number:</h4></label>
+            <input type="" id="weekNumber" size="2">
+            <button class="btn btn-primary" id="submit">Go</button>
+        </div>
+    </div>
+    <div class="row">
+        <form id="userInput">
+            <div class="text-center" id="weekDisplay"></div>
+            <!-- <div class="col-sm-6 text-center" id="homeTeam"></div>
+            <div class="col-sm-6 text-center" id="awayTeam"></div> -->
+            <div class="col-sm-6" id="homeTeam"></div>
+            <div class="col-sm-6" id="awayTeam"></div>
+        </form>
+    </div>
+        <div class="row">
+            <div id="mnfScore">
+                <h3 style="display: flex; justify-content: center; color: black">Tie Breaker</h3>
+                <div style="display: flex; justify-content: center">
+                    <label><h4 style="color:black; display: flex; justify-content: center;">Monday Night Football Total Score  </h4></label>
+                <div class="col-sm-2">
+                    <input type="text" placeholder=" Enter Total Score" id="mnf" name="mnf" class="form-control">
+                </div>
+                </div>
+            </div>
+            <div id="username">
+                    <div style="display: flex; justify-content: center">
+                        <label><h4 style="color:black; display: flex; justify-content: center;">Enter your Display Name  </h4></label>
+                <div class="col-sm-2">
+                    <input type="text" placeholder=" Enter username" id="uname" name="uname" class="form-control">
+                </div>
+                </div>
+            </div>
+        </div>
+    </form><br>
+        <!--submit button -->
+    <div style="display: flex; justify-content: center;">
+        <div>
+            <button id="submitPicks" type="submit" class="btn btn-primary" style="background: linear-gradient(#e80b0b 28%, #010304 115%)">Submit</button>
+            <button type="button" class="btn btn-default" id="clearAll" style="background:#4c5d5b; color: white">Clear</button>
+        </div>    
+</div>
+<footer class="footer">
+        <div class="container">
+            <h4><a href="./userStats.html">User Stats</a></h4>
+        </div>
+</footer>
+</body>
+<script type="text/javascript" src="./teamDisplay.js">
+</script>
+</html>
