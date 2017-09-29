@@ -21,10 +21,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "g226haiaqfbydreg",
+    "password": "udj5f9u69izm91br",
+    "database": "f1zo9pg3qufh5lag",
+    "host": "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
