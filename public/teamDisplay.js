@@ -8,11 +8,8 @@ $(document).ready(function(){
 
 //requests to each week:
 
-    //  showTeams(chosenWeek);     
-
      $("#submit").on("click", function() {
-         $("#weekDisplay").html("");
-        //  $("#weekNumber").clearForm(); This doesn't work but I'd be down to find something that does something similar   
+         $("#weekDisplay").html("");   
          $("#awayTeam").html("");
          $("#homeTeam").html("");
          let chosenWeek = $("#weekNumber").val();
@@ -22,8 +19,8 @@ $(document).ready(function(){
             for (let i = 0; i < data.length; i++) {
                 if (data[i].Week == chosenWeek) {
                     console.log(data[i].AwayTeam);                    
-                    //$("#awayTeam").append("<div class='panel panel-default'><input id='away" + (i + 1) + "' type='radio' value='away" + (i + 1) + "'><h4>" + data[i].AwayTeam + "</h4></div>");
-                    $("#awayTeam").append("<div class='card wow fadeIn'><h4><span class='label label-primary'>" + "Away Team" + "</span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].AwayTeam + "'>" + data[i].AwayTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMMM Do YYYY, h:mm:ss a') + "<strong></h4></div>");
+                    
+                    $("#awayTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].AwayTeam + "'>" + data[i].AwayTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMMM Do YYYY, h:mm:ss a') + "<strong></h5></div>");
 
                 }
             }
@@ -31,37 +28,21 @@ $(document).ready(function(){
             for (let i = 0; i < data.length; i++) {
                 if (data[i].Week == chosenWeek) {
                     console.log(data[i].HomeTeam);
-                    //$("#homeTeam").append("<div class='panel panel-default'><input id='home" + (i + 1) + "'type='radio' value='home" + (i + 1) + "'><h4>" + data[i].HomeTeam + "</h4></div>");
-                    $("#homeTeam").append("<div class='card wow fadeIn'><h4><span class='label label-primary'>" + "Home Team" + "</span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].HomeTeam + "'>" + data[i].HomeTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMM Do YYYY, h:mm:ss a') + "<strong></h4></div>");
+                    
+                    $("#homeTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].HomeTeam + "'>" + data[i].HomeTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMM Do YYYY, h:mm:ss a') + "<strong></h5></div>");
 
                 }
             }
             $("#weekDisplay").html("<h3>Week #" + chosenWeek + "</h3>");
 
-       //      winningTeams();
-
-       //      function winningTeams() {
-     		// 	for (let i = 0; i < data.length; i++) {
-	     	// 		var gameWinner = g[i+1]_Winner;
-		     // 		if (data[i].HomeScore > data[i].AwayScore) {	
-		     // 		gameWinner = data[i].HomeTeam;
-		     // 		} else {
-		     // 		gameWinner = data[i].AwayTeam;
-		     // 	}
-	     	// 	console.log(gameWinner);
-	     	// 	winnersArray.push(gameWinner);
-	    		// }
-     		// };
+     
 
          })
         return chosenWeek;
      });
      
 
-     winnersArray = ["away1", "away2", "home3", "home4", "home5",
-	 "home6", "away7", "home8", "away9",
-	  "home10", "home11", "home12", "home13", "away14", "home15", "away16"];
-
+  
      $("#submitPicks").on("click", function() {
  
          function checkScore() {
@@ -76,7 +57,7 @@ $(document).ready(function(){
          userPicks();
          getPicks();
          console.log(userPoints);
-         // console.log(userPoints);
+         
  
          if (checkScore() === true) {
             var mnfScore = {
@@ -150,9 +131,7 @@ $(document).ready(function(){
              $('#username input[type="text"]').each(function(){
                    $(this).val("");  
              });
-             // $('#userInput input[type="radio":checked]').each(function(){
-             //     $(this).checked = false;
-             // });  
+            
              $("#userInput").empty();
          }
  

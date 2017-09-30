@@ -28,7 +28,7 @@ var Login = React.createClass({
             display: 'flex',
             justifyContent: 'center'
         }
-    }, React.createElement('a', { 'href': './teams.html' }, React.createElement('button', {
+    }, React.createElement('a', { 'href': './teams2.html' }, React.createElement('button', {
         'style': {
             width: '300px',
             height: '80px',

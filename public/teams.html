@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>Pig Skin Pickem</title>
     <!-- Added link to the jQuery Library -->
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <!-- Added link to Firebase -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script> 
     <!-- Added link to moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- Added a link to Bootstrap-->
@@ -30,10 +28,15 @@
     <div class="row">
         <form id="userInput">
             <div class="text-center" id="weekDisplay"></div>
-            <!-- <div class="col-sm-6 text-center" id="homeTeam"></div>
-            <div class="col-sm-6 text-center" id="awayTeam"></div> -->
-            <div class="col-sm-6" id="homeTeam"></div>
-            <div class="col-sm-6" id="awayTeam"></div>
+            <div class="row">
+               <div class="col-sm-6 text-center">Home Teams</div>
+               <div class="col-sm-6 text-center">Away Teams</div> 
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6" id="homeTeam"></div>
+                <div class="col-sm-6" id="awayTeam"></div>
+            </div>
         </form>
     </div>
         <div class="row">
