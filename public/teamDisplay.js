@@ -13,6 +13,11 @@ $(document).ready(function(){
          $("#awayTeam").html("");
          $("#homeTeam").html("");
          let chosenWeek = $("#weekNumber").val();
+         if (chosenWeek > 16 || chosenWeek < 1) {
+             alert("Please Pick a week number between 1 and 16.");
+             return;
+         }
+         
          console.log(chosenWeek);
          $.get('api/fantasy/' + chosenWeek, function(data){
             //POPULATE AWAY TEAMS AND INFO
@@ -34,6 +39,7 @@ $(document).ready(function(){
                 }
             }
             $("#weekDisplay").html("<h3>Week #" + chosenWeek + "</h3>");
+            $("#hideyHole").removeClass("hider");
 
      
 
@@ -69,6 +75,7 @@ $(document).ready(function(){
          } else {
                alert("Please enter the Total Monday Night Score and your Display Name before Submitting");
          }
+         alert("Thank you! Your Picks have been Submitted!");
           return false;
 
          let Picks1 = $('input:radio[name=1]:checked').val();
@@ -76,6 +83,8 @@ $(document).ready(function(){
         
          console.log(Picks1);
          console.log(Picks2);
+
+         alert("Thank you! Your Picks have been Submitted!");
  
      });
  

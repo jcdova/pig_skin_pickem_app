@@ -1,178 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Pig Skin Pickem</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	  <!-- Added link to moment.js -->
+    <title>Pigskin Pick Em: Stats</title>
+
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
+    <!-- Bootstrap core CSS -->
+    <link href="./2ColumnsListing/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="./2ColumnsListing/css/mdb.min.css" rel="stylesheet">
+
+    <link href="./2ColumnsListing/css/style.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+
+        main {
+            margin-top: 3rem;
+            ;
         }
-        th, td {
-            padding:8px;
-            text-align: center;    
+
+        main .card {
+            margin-bottom: 2rem;
         }
-        .green {
-          color: green;
+
+        @media only screen and (max-width: 768px) {
+            .read-more {
+                text-align: center;
+            }
         }
-        .red {
-          color: red;
+
+        footer.page-footer a {
+            color: #323232;
+        }
+
+        footer.page-footer {
+            background-color: #dfe9f0;
+            margin-top: 2rem;
+            color: black;
+        }
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+        
+        .weeker {  
+        display: block;  
+        margin-right: auto;  
+        margin-left: auto;  
+        }
+
+        .card {
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        .hider {
+            display: none;
+        }
+
+        .bolder, .green, .red {
+            font-weight: bold;
+            font-size: 1.2em;
         }
 
     </style>
 </head>
 
 <body>
-<div id="username">
-  <div style="display: flex; justify-content: center">
-    <label><h4 style="color:black; display: flex; justify-content: center;">Enter Week #  </h4></label>
-    <div class="col-sm-2">
-      <input type="text" placeholder=" Enter week" id="weekSelect" name="weekNum" class="form-control">
-    </div>
-  </div>
-</div>
-<button id="getStats" type="submit" class="btn btn-primary" style="background: linear-gradient(#e80b0b 28%, #010304 115%)">Submit</button>
-<div class="container">
-      <br>
-  <table class="table" id="table">
-    <thead>
-      <tr>
-        <th class="USER-cell">USER</th>
-        <th class="GAME 1-cell">GAME 1</th>
-        <th class="GAME 2-cell">GAME 2</th>
-        <th class="GAME 3-cell">GAME 3</th>
-        <th class="GAME 4-cell">GAME 4</th>
-        <th class="GAME 5-cell">GAME 5</th>
-        <th class="GAME 6-cell">GAME 6</th>
-        <th class="GAME 7-cell">GAME 7</th>
-        <th class="GAME 8-cell">GAME 8</th>
-        <th class="GAME 9-cell">GAME 9</th>
-        <th class="GAME 10-cell">GAME 10</th>
-        <th class="GAME 11-cell">GAME 11</th>
-        <th class="GAME 12-cell">GAME 12</th>
-        <th class="GAME 13-cell">GAME 13</th>
-        <th class="GAME 14-cell">GAME 14</th>
-        <th class="GAME 15-cell">GAME 15</th>
-        <th class="GAME 16-cell">GAME 16</th>
-        <th class="MNF-cell">MNF</th>
-        <th class="PTS-cell">PTS</th>
-        <th class="YTD-cell">YTD</th>
-      </tr>
-    </thead>
-    <tbody id = "tableTime">
-    </tbody>
-    <!-- <tbody id="winnerTable">
-      <!- displays all the winning team for the week  -->
-    <!-- </tbody>
-    <tbody id="userTable"> -->
-      <!-- displays all the user data for the week  -->
-    <!-- </tbody> -->
-  </table>
-</div>
- 
- <!-- <table>
-  <tbody>
-      <tr class="firstRow" >
-      <td class="USER-cell" rowspan="3"></td>
-      <td class="GAME 1-cell">a1_abrv</td>
-      <td class="GAME 2-cell">a2_abrv</td>
-      <td class="GAME 3-cell">a3_abrv</td>
-      <td class="GAME 4-cell">a4_abrv</td>
-      <td class="GAME 5-cell">a5_abrv</td>
-      <td class="GAME 6-cell">a6_abrv</td>
-      <td class="GAME 7-cell">a7_abrv</td>
-      <td class="GAME 8-cell">a8_abrv</td>
-      <td class="GAME 9-cell">a9_abrv</td>
-      <td class="GAME 10-cell">a10_abrv</td>
-      <td class="GAME 11-cell">a11_abrv</td>
-      <td class="GAME 12-cell">a12_abrv</td>
-      <td class="GAME 13-cell">a13_abrv</td>
-      <td class="GAME 14-cell">a14_abrv</td>
-      <td class="GAME 15-cell">a15_abrv</td>
-      <td class="GAME 16-cell">a16_abrv</td>
-      <td class="MNF-cell">act_MNF</td>
-      <td class="PTS-cell" rowspan="3"></td>
-      <td class="YTD-cell" rowspan="3"></td>
-    </tr>
-    <tr class="secondRow">
-      <td class="GAME 1-cell">h1_abrv</td>
-      <td class="GAME 2-cell">h2_abrv</td>
-      <td class="GAME 3-cell">h3_abrv</td>
-      <td class="GAME 4-cell">h4_abrv</td>
-      <td class="GAME 5-cell">h5_abrv</td>
-      <td class="GAME 6-cell">h6_abrv</td>
-      <td class="GAME 7-cell">h7_abrv</td>
-      <td class="GAME 8-cell">h8_abrv</td>
-      <td class="GAME 9-cell">h9_abrv</td>
-      <td class="GAME 10-cell">h10_abrv</td>
-      <td class="GAME 11-cell">h11_abrv</td>
-      <td class="GAME 12-cell">h12_abrv</td>
-      <td class="GAME 13-cell">h13_abrv</td>
-      <td class="GAME 14-cell">h14_abrv</td>
-      <td class="GAME 15-cell">h15_abrv</td>
-      <td class="GAME 16-cell">h16_abrv</td>
-      <td class="MNF-cell" rowspan="2"></td>
-      
-    </tr>
-    <tr class="thirdRow"> 
-      <td class="GAME 1-cell">g1_Winner</td>
-      <td class="GAME 2-cell">g2_Winner</td>
-      <td class="GAME 3-cell">g3_Winner</td>
-      <td class="GAME 4-cell">g4_Winner</td>
-      <td class="GAME 5-cell">g5_Winner</td>
-      <td class="GAME 6-cell">g6_Winner</td>
-      <td class="GAME 7-cell">g7_Winner</td>
-      <td class="GAME 8-cell">g8_Winner</td>
-      <td class="GAME 9-cell">g9_Winner</td>
-      <td class="GAME 10-cell">g10_Winner</td>
-      <td class="GAME 11-cell">g11_Winner</td>
-      <td class="GAME 12-cell">g12_Winner</td>
-      <td class="GAME 13-cell">g13_Winner</td>
-      <td class="GAME 14-cell">g14_Winner</td>
-      <td class="GAME 15-cell">g15_Winner</td>
-      <td class="GAME 16-cell">g16_Winner</td>
-    </tr>
-    <tr class="fourthRow">
-      <td class="USER-cell">user1</td>
-      <td class="GAME 1-cell">u1_g1_Winner</td>
-      <td class="GAME 2-cell">u1_g2_Winner</td>
-      <td class="GAME 3-cell">u1_g3_Winner</td>
-      <td class="GAME 4-cell">u1_g4_Winner</td>
-      <td class="GAME 5-cell">u1_g5_Winner</td>
-      <td class="GAME 6-cell">u1_g6_Winner</td>
-      <td class="GAME 7-cell">u1_g7_Winner</td>
-      <td class="GAME 8-cell">u1_g8_Winner</td>
-      <td class="GAME 9-cell">u1_g9_Winner</td>
-      <td class="GAME 10-cell">u1_g10_Winner</td>
-      <td class="GAME 11-cell">u1_g11_Winner</td>
-      <td class="GAME 12-cell">u1_g12_Winner</td>
-      <td class="GAME 13-cell">u1_g13_Winner</td>
-      <td class="GAME 14-cell">u1_g14_Winner</td>
-      <td class="GAME 15-cell">u1_g15_Winner</td>
-      <td class="GAME 16-cell">u1_g16_Winner</td>
-      <td class="MNF-cell">u1_MNF</td>
-      <td class="PTS-cell">u1_Points</td>
-      <td class="YTD-cell">u1_Points</td>
-    </tr>
-  </tbody>
-</table> -->
 
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5">
 
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Pig Skin Pickem</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/picks">Picks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/stats">Results</a>
+                    </li>
+
+                    
+
+                </ul>
+                
+            </div>
+            
+
+        </nav>
+        
+
+    </header>
+
+    <main>
+        <!--Main layout-->
+        <div class="container">
+                <div id="username">
+                        <!-- <div style="display: flex; justify-content: center">
+                          <label><h4 style="color:black; display: flex; justify-content: center;">Enter Week #  </h4></label>
+                          <div class="col-sm-2">
+                            <input type="text" placeholder=" Enter week" id="weekSelect" name="weekNum" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <button id="getStats" type="submit" class="btn btn-primary" style="background: linear-gradient(#e80b0b 28%, #010304 115%)">Submit</button> -->
+                      <div class="md-form col-md-4 text-center center weeker">
+                          <input type="text" id="weekSelect" class="form-control">
+                          <label for="weekpick">Enter Week</label>
+                          <button class="btn btn-default" id="getStats">Go</button>
+                       </div>
+                      <div class="container">
+                            <br>
+                        <table class="table" id="table">
+                          <thead>
+                            <tr>
+                              <th class="USER-cell">USER</th>
+                              <th class="GAME 1-cell">GAME 1</th>
+                              <th class="GAME 2-cell">GAME 2</th>
+                              <th class="GAME 3-cell">GAME 3</th>
+                              <th class="GAME 4-cell">GAME 4</th>
+                              <th class="GAME 5-cell">GAME 5</th>
+                              <th class="GAME 6-cell">GAME 6</th>
+                              <th class="GAME 7-cell">GAME 7</th>
+                              <th class="GAME 8-cell">GAME 8</th>
+                              <th class="GAME 9-cell">GAME 9</th>
+                              <th class="GAME 10-cell">GAME 10</th>
+                              <th class="GAME 11-cell">GAME 11</th>
+                              <th class="GAME 12-cell">GAME 12</th>
+                              <th class="GAME 13-cell">GAME 13</th>
+                              <th class="GAME 14-cell">GAME 14</th>
+                              <th class="GAME 15-cell">GAME 15</th>
+                              <th class="GAME 16-cell">GAME 16</th>
+                              <th class="MNF-cell">MNF</th>
+                            </tr>
+                          </thead>
+                          <tbody id = "tableTime">
+                          </tbody>
+                        </table>
+                      </div>
+                       
+                      
+   
+        </div>
+        <!--/.Main layout-->
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+        <!--Footer links-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--First column-->
+                <div class="col-lg-6 col-md-6 ml-auto">
+                    <h5 class="title mb-3"><strong>About Pig Skin Pickem</strong></h5>
+                    <p>Choose your week, Pick the team you think will win, Add in the total Monday Night Score, Brag to your friends you know your Football</p>
+                    
+                </div>
+                <div class="col-md-3"></div>
+                <!--/.First column-->
+                <hr class="w-100 clearfix d-sm-none">
+                <!--Second column-->
+                <div class="col-lg-3 col-md-3 ml-auto">
+                    <h5 class="title mb-3"><strong>Navigation</strong></h5>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/picks">Picks</a>
+                        </li>
+                        <li>
+                            <a href="/stats">Results</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!--/.Second column-->
+                <hr class="w-100 clearfix d-sm-none">
+                
+                <hr class="w-100 clearfix d-sm-none">
+                
+            </div>
+        </div>
+        <!--/.Footer links-->
+        <hr>
+        
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="containter-fluid">
+                © 2017 Copyright: <a href="https://github.com/jcdova/pig_skin_pickem_app">Wes, Jorge, Paul </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="./2ColumnsListing/js/jquery-3.1.1.min.js"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="./2ColumnsListing/js/popper.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./2ColumnsListing/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="./2ColumnsListing/js/mdb.min.js"></script>
+
+    <!-- Just like, some stuff -->
+    <script type="text/javascript" src="./teamDisplay.js"></script>
+
+    
+    <script>
+        new WOW().init();
+    </script>
+    <script type="text/javascript" src="./userStats.js"></script>
 
 </body>
-
-<script type="text/javascript" src="./userStats.js">
-
-</script>
 
 </html>

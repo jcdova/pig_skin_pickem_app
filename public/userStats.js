@@ -19,7 +19,7 @@ $(document).ready(function(){
             data[i].game_16 = "-";
             data[i].game_14 = "-";
           }
-          $('#tableTime').append('<tr><td>' + data[i].username + '</td><td id="game1-' + i + '">' + data[i].game_1 + '</td><td id="game2-' + i + '">' + data[i].game_2 + '</td><td id="game3-' + i + '">' + data[i].game_3 + '</td><td id="game4-' + i + '">' + data[i].game_4 + '</td><td id="game5-' + i + '">' + data[i].game_5 + '</td><td id="game6-' + i + '">' + data[i].game_6 + '</td><td id="game7-' + i + '">' + data[i].game_7 + '</td><td id="game8-' + i + '">' + data[i].game_8 + '</td><td id="game9-' + i + '">' + data[i].game_9 + '</td><td id="game10-' + i + '">' + data[i].game_10 + '</td><td id="game11-' + i + '">' + data[i].game_11 + '</td><td id="game12-' + i + '">' + data[i].game_12 + '</td><td id="game13-' + i + '">' + data[i].game_13 + '</td><td id="game14-' + i + '">' + data[i].game_14 + '</td><td id="game15-' + i + '">' + data[i].game_15 + '</td><td id="game16-' + i + '">' + data[i].game_16 + '</td><td>' + data[i].mnf + '</td></tr>');
+          $('#tableTime').append('<tr><td class="bolder">' + data[i].username + '</td><td id="game1-' + i + '">' + data[i].game_1 + '</td><td id="game2-' + i + '">' + data[i].game_2 + '</td><td id="game3-' + i + '">' + data[i].game_3 + '</td><td id="game4-' + i + '">' + data[i].game_4 + '</td><td id="game5-' + i + '">' + data[i].game_5 + '</td><td id="game6-' + i + '">' + data[i].game_6 + '</td><td id="game7-' + i + '">' + data[i].game_7 + '</td><td id="game8-' + i + '">' + data[i].game_8 + '</td><td id="game9-' + i + '">' + data[i].game_9 + '</td><td id="game10-' + i + '">' + data[i].game_10 + '</td><td id="game11-' + i + '">' + data[i].game_11 + '</td><td id="game12-' + i + '">' + data[i].game_12 + '</td><td id="game13-' + i + '">' + data[i].game_13 + '</td><td id="game14-' + i + '">' + data[i].game_14 + '</td><td id="game15-' + i + '">' + data[i].game_15 + '</td><td id="game16-' + i + '">' + data[i].game_16 + '</td><td class="bolder">' + data[i].mnf + '</td></tr>');
          
           // TERRIBLE LAND OF IF STATEMENTS OF SHAME (TO APPLY COLORS)
           var counter = 0;
@@ -131,6 +131,10 @@ $(document).ready(function(){
   $("#getStats").on("click", function() {
     $("#tableTime").html("");
     let Sweek = $("#weekSelect").val();
+    if (Sweek < 1 || Sweek > 16) {
+      alert("Please enter a number between 1 and 16");
+      return;
+    }
     tableGenerate(Sweek);
   });
 });

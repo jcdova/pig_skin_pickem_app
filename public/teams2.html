@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Material Design Bootstrap</title>
+    <title>Pigskin Pick Em: Picks</title>
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
@@ -58,10 +58,19 @@
             color: #fff !important;
         }
         
-        #weeker {  
+        .weeker {  
         display: block;  
         margin-right: auto;  
         margin-left: auto;  
+        }
+
+        .card {
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        .hider {
+            display: none;
         }
 
 
@@ -90,7 +99,7 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pickos">Picks</a>
+                        <a class="nav-link" href="/picks">Picks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/stats">Results</a>
@@ -126,7 +135,7 @@
             <!--/.Page heading-->
             <hr>
             <!-- <form> -->
-                <div class="md-form col-md-4 text-center center" id="weeker">
+                <div class="md-form col-md-4 text-center center weeker">
                    <input type="text" id="weekNumber" class="form-control">
                    <label for="weekpick">Enter Week</label>
                    <button class="btn btn-default" id="submit">Go</button>
@@ -154,21 +163,17 @@
                 <!--/.Second column-->
             </div>
             <!--/.First row-->
-
-            <!--Second row-->
-            <div class="row mt-4 wow fadeIn" data-wow-delay="0.2s">
-                <!--First column-->
-                <div class="col-lg-6">
+            <div class="hider" id="hideyHole">
+                <div class="md-form col-md-4 text-center center weeker">
+                    <input type="text" id="mnf" class="form-control">
+                    <label for="mnf">Monday Night Football Tiebreaker</label>
                 </div>
-                <!--/.First column-->
-
-                <!--Second column-->
-                <div class="col-lg-6">
+                <div class="md-form col-md-4 text-center center weeker">
+                    <input type="text" id="uname" class="form-control">
+                    <label for="uname">Display Name</label>
+                    <button class="btn btn-default" id="submitPicks">Submit Picks</button>
                 </div>
-                <!--Second column-->
             </div>
-            <!--/.Second row-->
-            <hr>
 
            
             
@@ -198,7 +203,7 @@
                             <a href="/">Home</a>
                         </li>
                         <li>
-                            <a href="/pickos">Picks</a>
+                            <a href="/picks">Picks</a>
                         </li>
                         <li>
                             <a href="/stats">Results</a>
