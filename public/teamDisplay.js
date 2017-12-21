@@ -25,7 +25,7 @@ $(document).ready(function(){
                 if (data[i].Week == chosenWeek) {
                     console.log(data[i].AwayTeam);                    
                     
-                    $("#awayTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].AwayTeam + "'>" + data[i].AwayTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMMM Do YYYY, h:mm:ss a') + "<strong></h5></div>");
+                    $("#awayTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].AwayTeam + "'>" + data[i].AwayTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMMM Do YYYY, h:mm a') + "<strong></h5></div>");
 
                 }
             }
@@ -34,7 +34,7 @@ $(document).ready(function(){
                 if (data[i].Week == chosenWeek) {
                     console.log(data[i].HomeTeam);
                     
-                    $("#homeTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].HomeTeam + "'>" + data[i].HomeTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMM Do YYYY, h:mm:ss a') + "<strong></h5></div>");
+                    $("#homeTeam").append("<div class='card wow fadeIn'><h5><span class='label label-primary'></span> " + "<input type='radio' name='" + (i +1) + "' value='" + data[i].HomeTeam + "'>" + data[i].HomeTeam + " | " + "<strong>" + " Week " + data[i].Week + " | " + moment(data[i].Date).format('MMM Do YYYY, h:mm a') + "<strong></h5></div>");
 
                 }
             }
